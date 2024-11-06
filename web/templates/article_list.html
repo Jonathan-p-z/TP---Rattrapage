@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Articles</title>
+    <link rel="stylesheet" href="/web/static/style.css">
+</head>
+<body>
+    <header>
+        <img src="/assets/img/logo/logo.png" alt="Logo" class="logo">
+        <nav>
+            <a href="/">Accueil</a>
+            <a href="/ajouter">Ajouter un produit</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Nos Articles</h1>
+        <div class="product-list">
+            {{range .Articles}}
+            <div class="product-item">
+                <img src="/assets/img/products/{{.Image}}" alt="{{.Nom}}">
+                <h2>{{.Nom}}</h2>
+                <p>Prix : {{.Prix}} €</p>
+                {{if .Reduction}}
+                    <p>Réduction : {{.Reduction}}%</p>
+                {{end}}
+                <a href="/article/{{.ID}}" class="view-button">Voir le produit</a>
+            </div>
+            {{end}}
+        </div>
+    </main>
+</body>
+</html>
