@@ -20,7 +20,7 @@ header {
 
 /* Logo */
 header img {
-    height: 100px; /* Hauteur augmentée pour un logo plus grand */
+    height: 100px;
     width: auto;
     margin-left: 20px;
 }
@@ -31,7 +31,6 @@ nav {
     margin-left: auto;
 }
 
-/* Lien de navigation (Accueil sur le fond gris) */
 nav a:first-child {
     background-color: #4a4a4a;
     color: #ffffff;
@@ -43,10 +42,8 @@ nav a:first-child {
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s;
-    border-radius: 0;
 }
 
-/* Lien de navigation (Ajouter un produit sur le fond noir) */
 nav a:last-child {
     background-color: #333;
     color: #ffffff;
@@ -57,15 +54,12 @@ nav a:last-child {
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s;
-    border-radius: 0;
 }
 
-/* Effet hover pour les liens */
 nav a:hover {
     background-color: #555;
 }
 
-/* Pied de page */
 footer {
     background-color: #ffffff;
     padding: 10px;
@@ -73,16 +67,16 @@ footer {
     color: #888;
     font-size: 0.8em;
     border-top: 1px solid #444;
-    margin-top: auto; /* S'assure que le footer reste en bas */
+    margin-top: auto;
 }
 
 /* Conteneur principal pour les articles */
 .articles-container {
-    display: flex;
-    flex-wrap: wrap; /* Permet aux articles de s'ajuster sur plusieurs lignes */
-    gap: 16px; /* Espace entre les articles */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trois colonnes */
+    gap: 16px;
     padding: 20px;
-    justify-content: center; /* Centre les articles */
+    justify-items: center;
 }
 
 /* Style de chaque article */
@@ -91,7 +85,7 @@ footer {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 16px;
-    width: 200px;
+    width: 150px; /* Largeur réduite pour aligner trois cartes côte à côte */
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
@@ -104,7 +98,7 @@ footer {
 
 /* Image de l'article */
 .article-card img {
-    width: 100%;
+    width: 100%; /* Largeur fixe pour les images */
     height: auto;
     border-radius: 4px;
     margin-bottom: 12px;
@@ -112,26 +106,23 @@ footer {
 
 /* Titre de l'article */
 .article-card h3 {
-    font-size: 1.2em;
+    font-size: 1em;
     margin: 0;
     color: #333;
 }
 
-/* Description */
 .article-card p {
     font-size: 0.9em;
     color: #666;
     margin-bottom: 8px;
 }
 
-/* Prix */
 .article-card .price {
     font-weight: bold;
     color: #333;
     margin-bottom: 8px;
 }
 
-/* Bouton d'action */
 .article-card .add-to-cart {
     background-color: #333;
     color: #fff;

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Détails de l'Article</title>
-    <link rel="stylesheet" href="/web/static/style.css">
+    <link rel="stylesheet" href="../web/static/style.css">
 </head>
 <body>
     <header>
-        <img src="/web/static/logo/1.png" alt="Logo" class="logo">
+        <img src="../web/static/logo/1.png" alt="Logo" class="logo">
         <nav>
             <a href="/">Accueil</a>
             <a href="/ajouter">Ajouter un produit</a>
@@ -18,9 +18,15 @@
     <main>
         <h1>{{.Article.Nom}}</h1>
         <div class="product-detail">
-            <img src="/web/static/products/{{.Article.Image}}" alt="{{.Article.Nom}}">
+            <img src="../web/static/products/{{.Article.Image}}" alt="{{.Article.Nom}}">
             <p>Description : {{.Article.Description}}</p>
             <p>Prix : {{.Article.Prix}} €</p>
             <p>Stock : {{.Article.Stock}} unités</p>
             {{if .Article.Reduction}}
-                <p>Réduction : {{.Article.Reduction}}%</
+                <p>Réduction : {{.Article.Reduction}}%</p>
+                    {{end}}
+                </div>
+                <a href="/" class="back-button">Retour à la liste</a>
+            </main>
+        </body>
+        </html>

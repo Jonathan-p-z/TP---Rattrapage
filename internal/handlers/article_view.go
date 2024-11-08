@@ -27,7 +27,7 @@ func ArticleViewHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	tmpl := template.Must(template.ParseFiles("web/templates/base.html", "web/templates/article_view.html"))
+	tmpl := template.Must(template.ParseFiles("../web/templates/base.html", "../web/templates/article_view.html"))
 	data := struct {
 		Title   string
 		Article models.Article
