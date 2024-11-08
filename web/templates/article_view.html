@@ -14,19 +14,18 @@
             <a href="/ajouter">Ajouter un produit</a>
         </nav>
     </header>
-
     <main>
         <h1>{{.Article.Nom}}</h1>
         <div class="product-detail">
-            <img src="../web/static/products/{{.Article.Image}}" alt="{{.Article.Nom}}">
+            <img src="../web/static/produits/{{.Article.Image}}" alt="{{.Article.Nom}}">
             <p>Description : {{.Article.Description}}</p>
             <p>Prix : {{.Article.Prix}} €</p>
             <p>Stock : {{.Article.Stock}} unités</p>
             {{if .Article.Reduction}}
                 <p>Réduction : {{.Article.Reduction}}%</p>
                     {{end}}
+                    <a href="/" class="back-button">Retour à la liste</a>
                 </div>
-                <a href="/" class="back-button">Retour à la liste</a>
             </main>
-        </body>
-        </html>
+ </body>
+ </html>

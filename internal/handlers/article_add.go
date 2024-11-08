@@ -19,7 +19,7 @@ func ArticleAddHandler(w http.ResponseWriter, r *http.Request) {
 		}{
 			Title: "Ajouter un Produit",
 		}
-		tmpl.ExecuteTemplate(w, "base", data)
+		tmpl.Execute(w, data)
 	} else if r.Method == http.MethodPost {
 		nom := r.FormValue("nom")
 		description := r.FormValue("description")
@@ -36,7 +36,7 @@ func ArticleAddHandler(w http.ResponseWriter, r *http.Request) {
 			ID:          len(models.Articles) + 1,
 			Nom:         nom,
 			Description: description,
-			Image:       "default.jpg",
+			Image:       "34B.webp",
 			Prix:        prix,
 			Stock:       stock,
 			Reduction:   newReduction,

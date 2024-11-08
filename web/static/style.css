@@ -3,7 +3,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #1e1e2f;
-    color: #ffffff;
+    color: #7e2a2a;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -70,9 +70,15 @@ footer {
     margin-top: auto;
 }
 
-/* Conteneur principal pour les articles */
-.articles-container {
+.product-list {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+/* Conteneur principal pour les articles */
+.articles-card {
+    display: flex;
     grid-template-columns: repeat(3, 1fr); /* Trois colonnes */
     gap: 16px;
     padding: 20px;
@@ -135,4 +141,13 @@ footer {
 
 .article-card .add-to-cart:hover {
     background-color: #555;
+}
+
+.product-detail {
+    text-align: center;
+}
+
+.product-detail img{
+    height: 50%;
+    width: 50%;
 }
