@@ -1,0 +1,77 @@
+/* Style général */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2f;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Conteneur de l'en-tête */
+header {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    padding: 0;
+    border-bottom: 1px solid #444;
+}
+
+/* Logo */
+header img {
+    height: 100px; /* Hauteur augmentée pour un logo plus grand */
+    width: auto;
+    margin-left: 20px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    margin-left: auto;
+}
+
+/* Lien de navigation (Accueil sur le fond gris) */
+nav a:first-child {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 15px 30px;
+    border-right: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    border-radius: 0;
+}
+
+/* Lien de navigation (Ajouter un produit sur le fond noir) */
+nav a:last-child {
+    background-color: #333;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    border-radius: 0;
+}
+
+/* Effet hover pour les liens */
+nav a:hover {
+    background-color: #555;
+}
+
+/* Pied de page */
+footer {
+    background-color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    color: #888;
+    font-size: 0.8em;
+    border-top: 1px solid #444;
+    margin-top: auto; /* S'assure que le footer reste en bas */
+}

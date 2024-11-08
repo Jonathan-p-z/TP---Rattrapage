@@ -9,7 +9,11 @@ import (
 
 func ArticleAddHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodGet {
-		tmpl := template.Must(template.ParseFiles("web/templates/base.html", "web/templates/article_add.html"))
+		tmpl, err := template.ParseFiles("../web/templates/article_add.html")
+		if err != nil {
+			http.Error(w, "Erreur lors du chargement de la page", http.StatusInternalServerError)
+			return
+		}
 		data := struct {
 			Title string
 		}{
