@@ -1,77 +1,110 @@
-/* Style général */
+/* Global styling */
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #1e1e2f;
-    color: #ffffff;
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* Conteneur de l'en-tête */
-header {
-    display: flex;
-    align-items: center;
-    background-color: #333;
-    padding: 0;
-    border-bottom: 1px solid #444;
+/* Main content */
+main {
+    flex: 1; /* Prend tout l'espace disponible pour pousser le footer vers le bas */
+    padding: 20px;
 }
 
-/* Logo */
-header img {
-    height: 100px; /* Hauteur augmentée pour un logo plus grand */
-    width: auto;
-    margin-left: 20px;
+/* Container for all articles */
+.articles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: start;
 }
 
-/* Navigation */
-nav {
-    display: flex;
-    margin-left: auto;
-}
-
-/* Lien de navigation (Accueil sur le fond gris) */
-nav a:first-child {
-    background-color: #4a4a4a;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.1em;
-    padding: 15px 30px;
-    border-right: 1px solid #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s;
-    border-radius: 0;
-}
-
-/* Lien de navigation (Ajouter un produit sur le fond noir) */
-nav a:last-child {
-    background-color: #333;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.1em;
-    padding: 15px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s;
-    border-radius: 0;
-}
-
-/* Effet hover pour les liens */
-nav a:hover {
-    background-color: #555;
-}
-
-/* Pied de page */
-footer {
-    background-color: #ffffff;
-    padding: 10px;
+/* Individual article card */
+.article-card {
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 300px;
     text-align: center;
-    color: #888;
-    font-size: 0.8em;
-    border-top: 1px solid #444;
-    margin-top: auto; /* S'assure que le footer reste en bas */
+    color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Image styling */
+.article-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 2px solid #444;
+}
+
+/* Article title */
+.article-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+/* Article description */
+.article-card p {
+    margin: 10px;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* Price styling */
+.article-card .price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ff7f50;
+    margin: 10px 0;
+}
+
+/* Button styling */
+.article-card .add-to-cart {
+    background-color: #ff7f50;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 0 0 8px 8px;
+    margin-top: auto;
+}
+
+.article-card .add-to-cart:hover {
+    background-color: #ff5722;
+}
+
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+footer p {
+    margin: 0;
 }

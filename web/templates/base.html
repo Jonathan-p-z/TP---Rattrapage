@@ -18,10 +18,18 @@
     <main>
         {{block "content" .}}{{end}}
     </main>
-
-    <footer>
-        <p>&copy; 2024 - TP Rattrapage Golang Web
-        </p>
-    </footer>
+    <div class="product-list">
+        {{range .Articles}}
+        <div class="product-item">
+            <img src="/web/static/produits/{{.Image}}" alt="{{.Nom}}">
+            <h2>{{.Nom}}</h2>
+            <p>Prix : {{.Prix}} €</p>
+            {{if .Reduction}}
+                <p>Réduction : {{.Reduction}}%</p>
+            {{end}}
+            <a href="/article/{{.ID}}" class="view-button">Voir le produit</a>
+        </div>
+        {{end}}
+    </div>
 </body>
 </html>
