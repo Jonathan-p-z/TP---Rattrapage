@@ -1,19 +1,31 @@
 package handlers
 
 import (
-	"TP---Rattrapage/internal/models"
+	"articleselection/internal/models"
 	"html/template"
+	"log"
 	"net/http"
 )
 
+type test struct {
+	Title    string
+	Articles []models.Article
+}
+
 func ArticleListHandler(w http.ResponseWriter, r *http.Request) {
-	tmpl := template.Must(template.ParseFiles("web/templates/base.html", "web/templates/article_list.html"))
-	data := struct {
-		Title    string
-		Articles []models.Article
-	}{
+	tmpl, err := template.ParseFiles("../web/templates/base.html")
+	if err != nil {
+		log.Println("Error parsing template:", err)
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+		return
+	}
+	data := test{
 		Title:    "Liste des Articles",
 		Articles: models.Articles,
 	}
-	tmpl.ExecuteTemplate(w, "base", data)
+	err = tmpl.Execute(w, data)
+	if err != nil {
+		log.Println("Error executing template :", err)
+		return
+	}
 }

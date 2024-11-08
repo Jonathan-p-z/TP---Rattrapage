@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"TP---Rattrapage/internal/models"
+	"articleselection/internal/models"
 	"html/template"
 	"net/http"
 	"strconv"
